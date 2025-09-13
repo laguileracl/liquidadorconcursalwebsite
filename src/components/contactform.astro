@@ -104,9 +104,9 @@ import Button from './ui/button.astro';
       form.querySelectorAll(':invalid')[0].focus();
       return;
     }
-    const formData = new FormData(form);
-    const object = Object.fromEntries(formData);
-    const json = JSON.stringify(object);
+  const formData = new FormData(form);
+  const object = Object.fromEntries(formData);
+  const json = JSON.stringify(object);
 
     result.innerHTML = 'Enviando...';
 
@@ -119,14 +119,14 @@ import Button from './ui/button.astro';
       body: json,
     })
       .then(async (response) => {
-        let json = await response.json();
+        const data = await response.json();
         if (response.status == 200) {
           result.classList.add('text-green-500');
           result.innerHTML = 'Consulta enviada exitosamente. Nos contactaremos pronto.';
         } else {
           console.log(response);
           result.classList.add('text-red-500');
-          result.innerHTML = json.message;
+          result.innerHTML = data.message;
         }
       })
       .catch((error) => {

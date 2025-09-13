@@ -1,5 +1,4 @@
-import { describe, it, expect } from 'vitest';
-import { render } from '@testing-library/dom';
+import { describe, expect, it } from 'vitest';
 
 // Example test for utility functions
 describe('Utils', () => {

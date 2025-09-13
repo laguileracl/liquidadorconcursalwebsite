@@ -35,12 +35,18 @@ const menuitems = [
         <span class="text-slate-700">Concursal</span>
       </a>
       <div class="block lg:hidden">
-        <button id="astronav-menu" aria-label="Toggle Menu">
-          <Icon name="tabler:menu" class="w-4 h-4 text-gray-800" />
+        <button
+          id="astronav-menu"
+          class="p-2 rounded-md border border-gray-200 hover:bg-gray-50"
+          aria-label="Abrir menú"
+          aria-controls="astronav-items"
+          aria-expanded="false"
+        >
+          <Icon name="tabler:menu" class="w-5 h-5 text-gray-800" />
         </button>
       </div>
     </div>
-    <nav class="astronav-items astronav-toggle hidden w-full lg:w-auto mt-2 lg:flex lg:mt-0">
+    <nav id="astronav-items" class="astronav-items hidden w-full lg:w-auto mt-2 lg:flex lg:mt-0">
       <ul class="flex flex-col lg:flex-row lg:gap-3">
         {
           menuitems.map((item, index) => (
@@ -68,48 +74,111 @@ const menuitems = [
 </Container>
 
 <script>
-  // Mobile menu toggle
-  document.addEventListener('DOMContentLoaded', function () {
-    const menuButton = document.getElementById('astronav-menu');
-    const menuItems = document.querySelector('.astronav-items');
+  // Mobile menu toggle with accessibility and responsive sync
+  document.addEventListener('DOMContentLoaded', () => {
+    const btn = document.getElementById('astronav-menu');
+    const nav = document.getElementById('astronav-items');
+    const mq = window.matchMedia('(min-width: 1024px)');
 
-    if (menuButton && menuItems) {
-      menuButton.addEventListener('click', function () {
-        menuItems.classList.toggle('hidden');
-      });
+    function setOpen(open) {
+      if (!btn || !nav) return;
+      btn.setAttribute('aria-expanded', String(open));
+      if (open) {
+        nav.classList.remove('hidden');
+      } else {
+        nav.classList.add('hidden');
+      }
     }
-  });
 
-  // Smooth scrolling for anchor links
-  document.addEventListener('DOMContentLoaded', function () {
+    // Ensure correct state on load and when resizing
+    function syncWithMedia() {
+      if (!btn || !nav) return;
+      if (mq.matches) {
+        setOpen(true); // desktop always open
+      } else {
+        setOpen(false); // mobile closed by default
+      }
+    }
+
+    syncWithMedia();
+    mq.addEventListener('change', syncWithMedia);
+
+    btn?.addEventListener('click', () => {
+      if (!nav) return;
+      const isOpen = !nav.classList.contains('hidden');
+      setOpen(!isOpen);
+    });
+
+    // Smooth scrolling for anchor links + close menu on mobile after click
     const links = document.querySelectorAll('a[href^="#"]');
-
     links.forEach((link) => {
-      link.addEventListener('click', function (e) {
-        e.preventDefault();
-
-        const targetId = this.getAttribute('href');
-        const targetElement = document.querySelector(targetId);
-
-        if (targetElement) {
-          targetElement.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start',
-          });
+      link.addEventListener('click', (e) => {
+        const href = link.getAttribute('href') || '';
+        const target = document.querySelector(href);
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          if (!mq.matches) setOpen(false);
         }
       });
     });
+
+    // Scrollspy: set aria-current="page" on active section link
+    const navEl = document.getElementById('astronav-items');
+    const navLinks = Array.from(
+      (navEl || document).querySelectorAll('a[href^="#"]')
+    );
+
+    const sections = navLinks
+      .map((a) => {
+        const href = a.getAttribute('href') || '';
+        if (!href || href === '#') return null;
+        const sec = document.querySelector(href);
+        return sec ? { id: href, el: sec, link: a } : null;
+      })
+      .filter(Boolean);
+
+    function clearAriaCurrent() {
+      navLinks.forEach((a) => a.removeAttribute('aria-current'));
+    }
+
+    function getActiveSectionId() {
+      const scrollPos = window.scrollY;
+      const offset = 120; // account for header height
+      let active = sections[0]?.id || '';
+      let maxTop = -Infinity;
+      sections.forEach((s) => {
+        const top = s.el.getBoundingClientRect().top + scrollPos - offset;
+        if (top <= scrollPos && top > maxTop) {
+          maxTop = top;
+          active = s.id;
+        }
+      });
+      return active;
+    }
+
+    let ticking = false;
+    function onScroll() {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        const activeId = getActiveSectionId();
+        clearAriaCurrent();
+        const activeLink = navLinks.find(
+          (a) => (a.getAttribute('href') || '') === activeId
+        );
+        if (activeLink) activeLink.setAttribute('aria-current', 'page');
+        ticking = false;
+      });
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+    // Initialize on load
+    onScroll();
   });
 </script>
 
 <style>
-  .astronav-toggle {
-    display: none;
-  }
-
-  @media (max-width: 1023px) {
-    .astronav-toggle {
-      display: block;
-    }
-  }
+  /* Prefer Tailwind utilities for layout; no extra CSS needed here */
 </style>
