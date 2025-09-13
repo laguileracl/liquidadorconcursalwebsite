@@ -1,8 +1,7 @@
 import js from '@eslint/js';
-import tseslint from 'typescript-eslint';
-import astroPlugin from 'eslint-plugin-astro';
-import astroParser from 'astro-eslint-parser';
 import tsParser from '@typescript-eslint/parser';
+import astroPlugin from 'eslint-plugin-astro';
+import tseslint from 'typescript-eslint';
 
 export default [
   // Astro files using official flat recommended
@@ -54,13 +53,6 @@ export default [
 
   // Ignores
   {
-    ignores: [
-      'dist/',
-      'node_modules/',
-      '.astro/',
-      '*.config.js',
-      '*.config.mjs',
-      '*.config.ts',
-    ],
+    ignores: ['dist/', 'node_modules/', '.astro/', '*.config.js', '*.config.mjs', '*.config.ts'],
   },
 ];

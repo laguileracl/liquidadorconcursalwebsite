@@ -80,7 +80,7 @@ const menuitems = [
     const nav = document.getElementById('astronav-items');
     const mq = window.matchMedia('(min-width: 1024px)');
 
-    function setOpen(open) {
+    function setOpen(open: boolean) {
       if (!btn || !nav) return;
       btn.setAttribute('aria-expanded', String(open));
       if (open) {
@@ -125,16 +125,14 @@ const menuitems = [
 
     // Scrollspy: set aria-current="page" on active section link
     const navEl = document.getElementById('astronav-items');
-    const navLinks = Array.from(
-      (navEl || document).querySelectorAll('a[href^="#"]')
-    );
+    const navLinks = Array.from((navEl || document).querySelectorAll('a[href^="#"]'));
 
     const sections = navLinks
       .map((a) => {
         const href = a.getAttribute('href') || '';
         if (!href || href === '#') return null;
         const sec = document.querySelector(href);
-        return sec ? { id: href, el: sec, link: a } : null;
+        return sec ? { id: href, el: sec as HTMLElement, link: a } : null;
       })
       .filter(Boolean);
 
@@ -142,16 +140,22 @@ const menuitems = [
       navLinks.forEach((a) => a.removeAttribute('aria-current'));
     }
 
-    function getActiveSectionId() {
+    function getActiveSectionId(): string {
       const scrollPos = window.scrollY;
       const offset = 120; // account for header height
-      let active = sections[0]?.id || '';
+      let active = '';
+      if (sections.length > 0) {
+        const first = sections[0] as unknown as { id: string };
+        active = first?.id || '';
+      }
       let maxTop = -Infinity;
       sections.forEach((s) => {
-        const top = s.el.getBoundingClientRect().top + scrollPos - offset;
+        const sec = s as unknown as { id: string; el: HTMLElement };
+        const rectTop = sec.el?.getBoundingClientRect?.().top ?? Infinity;
+        const top = rectTop + scrollPos - offset;
         if (top <= scrollPos && top > maxTop) {
           maxTop = top;
-          active = s.id;
+          active = sec.id;
         }
       });
       return active;
@@ -164,9 +168,7 @@ const menuitems = [
       requestAnimationFrame(() => {
         const activeId = getActiveSectionId();
         clearAriaCurrent();
-        const activeLink = navLinks.find(
-          (a) => (a.getAttribute('href') || '') === activeId
-        );
+        const activeLink = navLinks.find((a) => (a.getAttribute('href') || '') === activeId);
         if (activeLink) activeLink.setAttribute('aria-current', 'page');
         ticking = false;
       });

@@ -104,9 +104,9 @@ import Button from './ui/button.astro';
       form.querySelectorAll(':invalid')[0].focus();
       return;
     }
-  const formData = new FormData(form);
-  const object = Object.fromEntries(formData);
-  const json = JSON.stringify(object);
+    const formData = new FormData(form);
+    const object = Object.fromEntries(formData);
+    const json = JSON.stringify(object);
 
     result.innerHTML = 'Enviando...';
 
