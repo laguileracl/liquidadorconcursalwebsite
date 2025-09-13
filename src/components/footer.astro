@@ -1,6 +1,5 @@
 ---
 import { Icon } from 'astro-icon/components';
-import Link from './ui/link.astro';
 import Container from './container.astro';
 ---
 
@@ -33,7 +32,10 @@ import Container from './container.astro';
         <h4 class="text-sm font-semibold mb-4 uppercase tracking-wider">Servicios</h4>
         <ul class="space-y-2 text-slate-400">
           <li>
-            <a href="#funciones" class="hover:text-white transition-colors">Evaluación Financiera</a
+            <a
+              href="#funciones"
+              class="hover:text-white transition-colors aria-[current=page]:text-white aria-[current=page]:underline"
+              >Evaluación Financiera</a
             >
           </li>
           <li>
@@ -45,7 +47,9 @@ import Container from './container.astro';
             <a href="#funciones" class="hover:text-white transition-colors">Convenios Judiciales</a>
           </li>
           <li>
-            <a href="#funciones" class="hover:text-white transition-colors"
+            <a
+              href="#funciones"
+              class="hover:text-white transition-colors aria-[current=page]:text-white aria-[current=page]:underline"
               >Liquidación de Activos</a
             >
           </li>
