@@ -1,0 +1,117 @@
+---
+import { Icon } from "astro-icon/components";
+import Container from "./container.astro";
+import Link from "./ui/link.astro";
+
+const menuitems = [
+  {
+    title: "Inicio",
+    path: "#inicio",
+  },
+  {
+    title: "Funciones",
+    path: "#funciones",
+  },
+  {
+    title: "Interesados",
+    path: "#interesados",
+  },
+  {
+    title: "Marco Legal",
+    path: "#legal",
+  },
+  {
+    title: "Contacto",
+    path: "#contacto",
+  },
+];
+---
+
+<Container>
+  <header class="flex flex-col lg:flex-row justify-between items-center my-5">
+    <div class="flex w-full lg:w-auto items-center justify-between">
+      <a href="/" class="text-lg font-bold">
+        <span class="text-blue-900">Liquidador</span>
+        <span class="text-slate-700">Concursal</span>
+      </a>
+      <div class="block lg:hidden">
+        <button id="astronav-menu" aria-label="Toggle Menu">
+          <Icon name="tabler:menu" class="w-4 h-4 text-gray-800" />
+        </button>
+      </div>
+    </div>
+    <nav
+      class="astronav-items astronav-toggle hidden w-full lg:w-auto mt-2 lg:flex lg:mt-0"
+    >
+      <ul class="flex flex-col lg:flex-row lg:gap-3">
+        {
+          menuitems.map((item, index) => (
+            <li>
+              <a
+                href={item.path}
+                class="flex lg:px-3 py-2 text-gray-600 hover:text-gray-900 rounded-md transition-colors duration-300"
+              >
+                {item.title}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+      <div class="lg:hidden flex items-center mt-3 gap-4">
+        <Link href="#contacto" size="md">Consultar</Link>
+      </div>
+    </nav>
+    <div>
+      <div class="hidden lg:flex items-center gap-4">
+        <Link href="#contacto" size="md">Consultar</Link>
+      </div>
+    </div>
+  </header>
+</Container>
+
+<script>
+  // Mobile menu toggle
+  document.addEventListener("DOMContentLoaded", function () {
+    const menuButton = document.getElementById("astronav-menu");
+    const menuItems = document.querySelector(".astronav-items");
+
+    if (menuButton && menuItems) {
+      menuButton.addEventListener("click", function () {
+        menuItems.classList.toggle("hidden");
+      });
+    }
+  });
+
+  // Smooth scrolling for anchor links
+  document.addEventListener("DOMContentLoaded", function () {
+    const links = document.querySelectorAll('a[href^="#"]');
+
+    links.forEach((link) => {
+      link.addEventListener("click", function (e) {
+        e.preventDefault();
+
+        const targetId = this.getAttribute("href");
+        const targetElement = document.querySelector(targetId);
+
+        if (targetElement) {
+          targetElement.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+        }
+      });
+    });
+  });
+</script>
+
+<style>
+  .astronav-toggle {
+    display: none;
+  }
+
+  @media (max-width: 1023px) {
+    .astronav-toggle {
+      display: block;
+    }
+  }
+</style>

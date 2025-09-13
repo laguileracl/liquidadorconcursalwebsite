@@ -1,37 +1,63 @@
 ---
+import { SEO } from "astro-seo";
+import "@fontsource-variable/inter/index.css";
+import "@fontsource-variable/bricolage-grotesque/index.css";
+import "../styles/global.css";
+
 export interface Props {
   title: string;
+  description?: string;
 }
 
-const { title } = Astro.props;
-import "../styles/global.css";
+const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
+
+const resolvedImageWithDomain = new URL("/favicon.svg", Astro.site).toString();
+
+const {
+  title,
+  description = "Servicios profesionales especializados en procesos concursales conforme a la legislación chilena. Liquidador concursal con más de 20 años de experiencia.",
+} = Astro.props;
 ---
 
 <!doctype html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="description"
-      content="Información institucional sobre liquidador concursal. Procesos concursales según Ley 20.720 bajo supervisión de SUPERIR."
-    />
-    <meta
-      name="keywords"
-      content="liquidador concursal, ley 20720, superir, proceso concursal, liquidación empresas, chile, información institucional"
-    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <meta name="author" content="Liquidador Concursal" />
-    <meta property="og:title" content={title} />
-    <meta
-      property="og:description"
-      content="Información institucional sobre procesos concursales según Ley 20.720 bajo supervisión de SUPERIR."
+
+    <SEO
+      title={title}
+      description={description}
+      canonical={canonicalURL}
+      twitter={{
+        creator: "@liquidadorconcursal",
+        site: "@liquidadorconcursal",
+        card: "summary_large_image",
+      }}
+      openGraph={{
+        basic: {
+          title: title,
+          type: "website",
+          image: resolvedImageWithDomain,
+          url: canonicalURL,
+        },
+        optional: {
+          description: description,
+          siteName: "Liquidador Concursal",
+        },
+        image: {
+          url: resolvedImageWithDomain,
+          width: 1200,
+          height: 630,
+          alt: "Liquidador Concursal - Servicios Profesionales",
+          type: "image/svg+xml",
+        },
+      }}
     />
-    <meta property="og:type" content="website" />
-    <title>{title}</title>
   </head>
-  <body class="min-h-screen bg-gray-50">
+  <body class="bg-white text-slate-900 font-inter">
     <slot />
   </body>
 </html>

@@ -1,0 +1,73 @@
+---
+import { Icon } from "astro-icon/components";
+import Container from "./container.astro";
+
+const features = [
+  {
+    title: "Evaluación de Estado Financiero",
+    description:
+      "Análisis detallado de la situación patrimonial del deudor para determinar la viabilidad del convenio o la necesidad de liquidación.",
+    icon: "tabler:calculator",
+  },
+  {
+    title: "Administración de Bienes",
+    description:
+      "Administración y conservación del patrimonio del deudor durante el proceso concursal, garantizando su preservación.",
+    icon: "tabler:building-warehouse",
+  },
+  {
+    title: "Elaboración de Convenios",
+    description:
+      "Propuesta y negociación de convenios judiciales que permitan la reorganización empresarial y el pago a acreedores.",
+    icon: "tabler:handshake",
+  },
+  {
+    title: "Liquidación de Activos",
+    description:
+      "Realización ordenada de los bienes del deudor para maximizar el valor de recuperación para los acreedores.",
+    icon: "tabler:cash",
+  },
+  {
+    title: "Asesoría Legal Especializada",
+    description:
+      "Acompañamiento legal integral durante todo el proceso concursal, tanto para deudores como acreedores.",
+    icon: "tabler:scale",
+  },
+  {
+    title: "Informes y Reportes",
+    description:
+      "Elaboración de informes técnicos y reportes de gestión para mantener informados a todos los interesados del proceso.",
+    icon: "tabler:file-text",
+  },
+];
+---
+
+<Container>
+  <div class="mt-16 md:mt-0">
+    <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">
+      Funciones del Liquidador Concursal
+    </h2>
+    <p class="text-lg mt-4 text-slate-600">
+      Servicios especializados en procesos concursales conforme a la legislación
+      chilena
+    </p>
+  </div>
+
+  <div class="grid sm:grid-cols-2 md:grid-cols-3 mt-16 gap-16">
+    {
+      features.map((item) => (
+        <div class="flex gap-4 items-start">
+          <div class="mt-1 bg-blue-100 rounded-full p-2 w-8 h-8 shrink-0">
+            <Icon class="text-blue-500" name={item.icon} />
+          </div>
+          <div>
+            <h3 class="font-semibold text-lg">{item.title}</h3>
+            <p class="text-slate-500 mt-2 leading-relaxed">
+              {item.description}
+            </p>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</Container>

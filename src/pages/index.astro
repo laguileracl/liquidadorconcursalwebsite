@@ -1,565 +1,125 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/navbar.astro';
+import Hero from '../components/hero.astro';
+import Features from '../components/features.astro';
+import Team from '../components/team.astro';
+import Contactform from '../components/contactform.astro';
+import Footer from '../components/footer.astro';
+import Container from '../components/container.astro';
+import Sectionhead from '../components/sectionhead.astro';
 ---
 
-<Layout title="Liquidador Concursal">
-  <main class="min-h-screen">
-    <!-- Flowbite Header -->
-    <nav class="bg-white border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-gray-800">
-      <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
-        <a href="#" class="flex items-center">
-          <svg class="mr-3 h-6 sm:h-9" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary-600"/>
-          </svg>
-          <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Liquidador Concursal</span>
-        </a>
-        <div class="flex items-center lg:order-2">
-          <a href="#contacto" class="text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800">Contactar</a>
-          <button data-collapse-toggle="mobile-menu-2" type="button" class="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="mobile-menu-2" aria-expanded="false">
-            <span class="sr-only">Open main menu</span>
-            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
-            <svg class="hidden w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-          </button>
+<Layout title="Liquidador Concursal - Servicios Profesionales Especializados">
+  <Navbar />
+  
+  <Hero 
+    title="Liquidador Concursal" 
+    subtitle="Servicios profesionales especializados en procesos concursales conforme a la legislación chilena. Más de 20 años de experiencia en reorganización empresarial y liquidación de activos."
+  />
+
+  <section id="funciones" class="my-16">
+    <Features />
+  </section>
+
+  <section id="interesados" class="my-24">
+    <Team />
+  </section>
+
+  <section id="legal" class="my-16">
+    <Container>
+      <Sectionhead>
+        <Fragment slot="title">Marco Legal del Proceso Concursal</Fragment>
+        <Fragment slot="desc">
+          Normativa y regulaciones que rigen los procedimientos concursales en Chile
+        </Fragment>
+      </Sectionhead>
+      
+      <div class="grid md:grid-cols-2 gap-12 items-center mt-16">
+        <div>
+          <h3 class="text-2xl font-bold text-gray-900 mb-6">Legislación Principal</h3>
+          <div class="space-y-6">
+            <div class="flex items-start">
+              <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-4 mt-1">
+                <svg class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+              </div>
+              <div>
+                <h4 class="text-lg font-semibold text-gray-900 mb-2">Ley N° 20.720</h4>
+                <p class="text-gray-600">Ley de Reorganización y Liquidación de Empresas y Personas. Establece los procedimientos concursales en Chile.</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-4 mt-1">
+                <svg class="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+              </div>
+              <div>
+                <h4 class="text-lg font-semibold text-gray-900 mb-2">Código de Comercio</h4>
+                <p class="text-gray-600">Marco legal complementario que regula aspectos comerciales relacionados con los procesos concursales.</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <div class="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center mr-4 mt-1">
+                <svg class="w-4 h-4 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+              </div>
+              <div>
+                <h4 class="text-lg font-semibold text-gray-900 mb-2">SUPERIR</h4>
+                <p class="text-gray-600">Superintendencia de Insolvencia y Reemprendimiento. Órgano fiscalizador de los procesos concursales.</p>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="hidden justify-between items-center w-full lg:flex lg:w-auto lg:order-1" id="mobile-menu-2">
-          <ul class="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
-            <li><a href="#" class="block py-2 pr-4 pl-3 text-white rounded bg-primary-700 lg:bg-transparent lg:text-primary-700 lg:p-0 dark:text-white" aria-current="page">Inicio</a></li>
-            <li><a href="#funciones" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Funciones</a></li>
-            <li><a href="#procesos" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Procesos</a></li>
-            <li><a href="#interesados" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Interesados</a></li>
+        
+        <div class="bg-gray-50 rounded-xl p-8">
+          <h3 class="text-xl font-bold text-gray-900 mb-6">Objetivos del Proceso Concursal</h3>
+          <ul class="space-y-4">
+            <li class="flex items-start">
+              <div class="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3"></div>
+              <span class="text-gray-700">Reorganizar la situación financiera del deudor cuando sea viable</span>
+            </li>
+            <li class="flex items-start">
+              <div class="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3"></div>
+              <span class="text-gray-700">Liquidar ordenadamente el patrimonio cuando la reorganización no sea posible</span>
+            </li>
+            <li class="flex items-start">
+              <div class="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3"></div>
+              <span class="text-gray-700">Proteger los derechos de los acreedores de manera equitativa</span>
+            </li>
+            <li class="flex items-start">
+              <div class="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3"></div>
+              <span class="text-gray-700">Facilitar el reemprendimiento cuando corresponda</span>
+            </li>
+            <li class="flex items-start">
+              <div class="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3"></div>
+              <span class="text-gray-700">Maximizar el valor de los activos para beneficio de los acreedores</span>
+            </li>
           </ul>
         </div>
       </div>
-    </nav>
+    </Container>
+  </section>
 
-    <!-- Flowbite Hero Section -->
-    <section class="bg-white dark:bg-gray-900">
-      <div class="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
-        <div class="mr-auto place-self-center lg:col-span-7">
-          <h1 class="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">
-            Liquidador Concursal
-          </h1>
-          <p class="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
-            Información institucional sobre procesos concursales según la <strong class="text-gray-900 dark:text-white">Ley N° 20.720</strong> de 
-            Reorganización y Liquidación de Empresas y Personas, bajo supervisión de 
-            <strong class="text-gray-900 dark:text-white">SUPERIR</strong>.
-          </p>
-          <div class="mb-8 lg:mb-16 space-y-4 sm:space-y-0 sm:space-x-4 sm:flex">
-            <a href="#contacto" class="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-white bg-primary-700 rounded-lg hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900">
-              Contactar Liquidador
-              <svg class="w-5 h-5 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
-              </svg>
-            </a>
-            <a href="#funciones" class="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
-              Conocer Marco Legal
-            </a>
-          </div>
-          <div class="p-4 mb-4 text-sm text-blue-800 rounded-lg bg-blue-50 dark:bg-gray-800 dark:text-blue-400" role="alert">
-            <span class="font-medium">Información importante:</span> Este sitio facilita la comunicación con interesados en procesos concursales específicos donde Luis Aguilera Arteaga ha sido designado liquidador concursal.
-          </div>
-        </div>
-        <div class="hidden lg:mt-0 lg:col-span-5 lg:flex">
-          <div class="w-full h-64 bg-gradient-to-br from-primary-50 to-primary-100 rounded-lg flex items-center justify-center">
-            <svg class="w-32 h-32 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
-            </svg>
-          </div>
-        </div>
+  <section id="contacto" class="my-16">
+    <Container>
+      <Sectionhead>
+        <Fragment slot="title">Contacto y Consultas</Fragment>
+        <Fragment slot="desc">
+          Para consultas específicas sobre procesos concursales, complete el siguiente formulario
+        </Fragment>
+      </Sectionhead>
+      
+      <div class="max-w-3xl mx-auto mt-16">
+        <Contactform />
       </div>
-    </section>
+    </Container>
+  </section>
 
-    <!-- Flowbite Features Section -->
-    <section class="bg-gray-50 dark:bg-gray-800" id="marco-legal">
-      <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
-        <div class="max-w-screen-md mb-8 lg:mb-16">
-          <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Marco Legal y Regulatorio</h2>
-          <p class="text-gray-500 sm:text-xl dark:text-gray-400">El liquidador concursal actúa bajo estricto cumplimiento de la normativa chilena vigente.</p>
-        </div>
-        <div class="space-y-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-12 md:space-y-0">
-          <div>
-            <div class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 dark:bg-primary-900">
-              <svg class="w-5 h-5 text-primary-600 lg:w-6 lg:h-6 dark:text-primary-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11.707 4.707a1 1 0 00-1.414-1.414L10 9.586 8.707 8.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-              </svg>
-            </div>
-            <h3 class="mb-2 text-xl font-bold dark:text-white">Ley N° 20.720</h3>
-            <p class="text-gray-500 dark:text-gray-400">Ley de Reorganización y Liquidación de Empresas y Personas que regula los procedimientos concursales en Chile.</p>
-          </div>
-          <div>
-            <div class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 dark:bg-primary-900">
-              <svg class="w-5 h-5 text-primary-600 lg:w-6 lg:h-6 dark:text-primary-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"></path>
-              </svg>
-            </div>
-            <h3 class="mb-2 text-xl font-bold dark:text-white">SUPERIR</h3>
-            <p class="text-gray-500 dark:text-gray-400">Superintendencia de Insolvencia y Reemprendimiento, organismo fiscalizador de liquidadores concursales.</p>
-          </div>
-          <div>
-            <div class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 dark:bg-primary-900">
-              <svg class="w-5 h-5 text-primary-600 lg:w-6 lg:h-6 dark:text-primary-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" d="M6 6V5a3 3 0 013-3h2a3 3 0 013 3v1h2a2 2 0 012 2v3.57A22.952 22.952 0 0110 13a22.95 22.95 0 01-8-1.43V8a2 2 0 012-2h2zm2-1a1 1 0 011-1h2a1 1 0 011 1v1H8V5zm1 5a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1z" clip-rule="evenodd"></path>
-                <path d="M2 13.692V16a2 2 0 002 2h12a2 2 0 002-2v-2.308A24.974 24.974 0 0110 15c-2.796 0-5.487-.46-8-1.308z"></path>
-              </svg>
-            </div>
-            <h3 class="mb-2 text-xl font-bold dark:text-white">Transparencia</h3>
-            <p class="text-gray-500 dark:text-gray-400">Procesos transparentes con fiscalización permanente y rendición de cuentas regulares.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Flowbite Functions Section -->
-    <section class="bg-white dark:bg-gray-900" id="funciones">
-      <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
-        <div class="mx-auto max-w-screen-sm text-center lg:mb-16 mb-8">
-          <h2 class="mb-4 text-3xl lg:text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Funciones del Liquidador Concursal</h2>
-          <p class="font-light text-gray-500 sm:text-xl dark:text-gray-400">Principales responsabilidades establecidas por la Ley N° 20.720</p>
-        </div>
-        <div class="grid gap-8 lg:grid-cols-2">
-          <article class="p-6 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
-            <div class="flex justify-between items-center mb-5 text-gray-500">
-              <span class="bg-primary-100 text-primary-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-primary-200 dark:text-primary-800">
-                <svg class="mr-1 w-3 h-3" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                  <path fill-rule="evenodd" d="M2 5a2 2 0 012-2h8a2 2 0 012 2v10a2 2 0 002 2H4a2 2 0 01-2-2V5zm3 1h6v4H5V6zm6 6H5v2h6v-2z" clip-rule="evenodd"></path>
-                  <path d="M15 7h1a2 2 0 012 2v5.5a1.5 1.5 0 01-3 0V9a1 1 0 00-1-1h-1v-1z"></path>
-                </svg>
-                Legal
-              </span>
-            </div>
-            <h2 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Administración de Activos</h2>
-            <p class="mb-5 font-light text-gray-500 dark:text-gray-400">Tomar posesión, administrar y conservar todos los bienes del deudor, manteniendo un inventario detallado y actualizando su valorización.</p>
-          </article>
-          <article class="p-6 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
-            <div class="flex justify-between items-center mb-5 text-gray-500">
-              <span class="bg-primary-100 text-primary-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-primary-200 dark:text-primary-800">
-                <svg class="mr-1 w-3 h-3" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M4 4a2 2 0 00-2 2v1h16V6a2 2 0 00-2-2H4z"></path>
-                  <path fill-rule="evenodd" d="M18 9H2v5a2 2 0 002 2h12a2 2 0 002-2V9zM4 13a1 1 0 011-1h1a1 1 0 110 2H5a1 1 0 01-1-1zm5-1a1 1 0 100 2h1a1 1 0 100-2H9z" clip-rule="evenodd"></path>
-                </svg>
-                Financiero
-              </span>
-            </div>
-            <h2 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Realización de Activos</h2>
-            <p class="mb-5 font-light text-gray-500 dark:text-gray-400">Proceder a la venta de los bienes mediante procedimientos transparentes, buscando obtener el mejor precio posible para maximizar el pago a acreedores.</p>
-          </article>
-          <article class="p-6 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
-            <div class="flex justify-between items-center mb-5 text-gray-500">
-              <span class="bg-primary-100 text-primary-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-primary-200 dark:text-primary-800">
-                <svg class="mr-1 w-3 h-3" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                </svg>
-                Distribución
-              </span>
-            </div>
-            <h2 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Distribución de Fondos</h2>
-            <p class="mb-5 font-light text-gray-500 dark:text-gray-400">Distribuir los fondos obtenidos entre los acreedores según el orden de prelación establecido por la ley, llevando registro detallado.</p>
-          </article>
-          <article class="p-6 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
-            <div class="flex justify-between items-center mb-5 text-gray-500">
-              <span class="bg-primary-100 text-primary-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-primary-200 dark:text-primary-800">
-                <svg class="mr-1 w-3 h-3" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                  <path fill-rule="evenodd" d="M2 5a2 2 0 012-2h12a2 2 0 012 2v10a2 2 0 01-2 2H4a2 2 0 01-2-2V5zm8.293 6.293a1 1 0 101.414-1.414L9.414 8.586l1.293-1.293a1 1 0 10-1.414-1.414L8 7.172 6.707 5.879a1 1 0 00-1.414 1.414L6.586 8.586l-1.293 1.293a1 1 0 101.414 1.414L8 9.828l1.293 1.465z" clip-rule="evenodd"></path>
-                </svg>
-                Informes
-              </span>
-            </div>
-            <h2 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Informes y Rendiciones</h2>
-            <p class="mb-5 font-light text-gray-500 dark:text-gray-400">Presentar informes periódicos al tribunal y a SUPERIR sobre el estado del proceso, rendiciones de cuenta y avances de la liquidación.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- Procesos Section -->
-    <section id="procesos" class="py-20 bg-gray-50">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16">
-          <h3 class="text-3xl font-bold text-gray-900 mb-4">
-            ¿Está involucrado en un proceso?
-          </h3>
-          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-            Si usted es acreedor, deudor o tiene interés en un proceso donde he
-            sido designado como liquidador concursal
-          </p>
-        </div>
-
-        <div class="bg-white p-8 rounded-lg shadow-sm max-w-4xl mx-auto">
-          <div class="grid md:grid-cols-2 gap-8">
-            <div>
-              <h4 class="text-2xl font-semibold mb-6 text-gray-900">
-                Información que puede solicitar:
-              </h4>
-              <ul class="space-y-3 text-gray-600">
-                <li class="flex items-start">
-                  <span class="text-blue-600 mr-3 mt-1">•</span>
-                  Estado actual del proceso de liquidación
-                </li>
-                <li class="flex items-start">
-                  <span class="text-blue-600 mr-3 mt-1">•</span>
-                  Inventario de activos y su valorización
-                </li>
-                <li class="flex items-start">
-                  <span class="text-blue-600 mr-3 mt-1">•</span>
-                  Cronograma de realización de activos
-                </li>
-                <li class="flex items-start">
-                  <span class="text-blue-600 mr-3 mt-1">•</span>
-                  Información sobre verificación de créditos
-                </li>
-                <li class="flex items-start">
-                  <span class="text-blue-600 mr-3 mt-1">•</span>
-                  Fechas de juntas de acreedores
-                </li>
-                <li class="flex items-start">
-                  <span class="text-blue-600 mr-3 mt-1">•</span>
-                  Distribuciones realizadas o programadas
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h4 class="text-2xl font-semibold mb-6 text-gray-900">
-                Comunicaciones oficiales:
-              </h4>
-              <div class="bg-blue-50 p-6 rounded-lg">
-                <p class="text-gray-700 mb-4">
-                  <strong>Importante:</strong> Todas las comunicaciones oficiales
-                  se realizan a través de los canales establecidos por el tribunal
-                  y según los procedimientos de la Ley N° 20.720.
-                </p>
-                <p class="text-gray-600 text-sm">
-                  Este sitio web facilita el contacto inicial para consultas
-                  generales. Para trámites oficiales, se seguirán los
-                  procedimientos legales correspondientes.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Flowbite Interesados CTA Section -->
-    <section class="bg-gray-50 dark:bg-gray-800" id="interesados">
-      <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
-        <div class="mx-auto max-w-screen-sm text-center">
-          <h2 class="mb-4 text-4xl tracking-tight font-extrabold leading-tight text-gray-900 dark:text-white">¿Quién puede contactar al Liquidador?</h2>
-          <p class="mb-6 font-light text-gray-500 dark:text-gray-400 md:text-lg">Diferentes personas y entidades tienen legítimo interés en comunicarse con el liquidador concursal durante el desarrollo del proceso</p>
-          <a href="#contacto" class="text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800">Consultar ahora</a>
-        </div>
-        <div class="grid gap-8 mt-12 lg:grid-cols-3 sm:grid-cols-2">
-          <div class="text-center text-gray-500 dark:text-gray-400">
-            <div class="flex justify-center items-center mx-auto mb-4 w-10 h-10 bg-gray-100 rounded-lg dark:bg-gray-800 lg:h-16 lg:w-16">
-              <svg class="w-5 h-5 text-gray-600 lg:w-8 lg:h-8 dark:text-gray-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
-              </svg>
-            </div>
-            <h3 class="mb-2 text-xl font-bold dark:text-white">Deudores</h3>
-            <p class="text-gray-500 dark:text-gray-400">Empresas declaradas en liquidación, representantes legales y administradores</p>
-          </div>
-          <div class="text-center text-gray-500 dark:text-gray-400">
-            <div class="flex justify-center items-center mx-auto mb-4 w-10 h-10 bg-gray-100 rounded-lg dark:bg-gray-800 lg:h-16 lg:w-16">
-              <svg class="w-5 h-5 text-gray-600 lg:w-8 lg:h-8 dark:text-gray-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                <path d="M7 3a1 1 0 000 2h6a1 1 0 100-2H7zM4 7a1 1 0 011-1h10a1 1 0 110 2H5a1 1 0 01-1-1zM2 11a2 2 0 012-2h12a2 2 0 012 2v4a2 2 0 01-2 2H4a2 2 0 01-2-2v-4z"></path>
-              </svg>
-            </div>
-            <h3 class="mb-2 text-xl font-bold dark:text-white">Acreedores</h3>
-            <p class="text-gray-500 dark:text-gray-400">Bancos, trabajadores, proveedores y acreedores con créditos verificados</p>
-          </div>
-          <div class="text-center text-gray-500 dark:text-gray-400">
-            <div class="flex justify-center items-center mx-auto mb-4 w-10 h-10 bg-gray-100 rounded-lg dark:bg-gray-800 lg:h-16 lg:w-16">
-              <svg class="w-5 h-5 text-gray-600 lg:w-8 lg:h-8 dark:text-gray-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-              </svg>
-            </div>
-            <h3 class="mb-2 text-xl font-bold dark:text-white">Abogados</h3>
-            <p class="text-gray-500 dark:text-gray-400">Abogados del deudor, de acreedores y estudios jurídicos representantes</p>
-          </div>
-          <div class="text-center text-gray-500 dark:text-gray-400">
-            <div class="flex justify-center items-center mx-auto mb-4 w-10 h-10 bg-gray-100 rounded-lg dark:bg-gray-800 lg:h-16 lg:w-16">
-              <svg class="w-5 h-5 text-gray-600 lg:w-8 lg:h-8 dark:text-gray-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" d="M6 6V5a3 3 0 013-3h2a3 3 0 013 3v1h2a2 2 0 012 2v3.57A22.952 22.952 0 0110 13a22.95 22.95 0 01-8-1.43V8a2 2 0 012-2h2zm2-1a1 1 0 011-1h2a1 1 0 011 1v1H8V5zm1 5a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1z" clip-rule="evenodd"></path>
-                <path d="M2 13.692V16a2 2 0 002 2h12a2 2 0 002-2v-2.308A24.974 24.974 0 0110 15c-2.796 0-5.487-.46-8-1.308z"></path>
-              </svg>
-            </div>
-            <h3 class="mb-2 text-xl font-bold dark:text-white">Organismos Fiscalizadores</h3>
-            <p class="text-gray-500 dark:text-gray-400">SUPERIR, funcionarios de control, inspectores y auditores</p>
-          </div>
-          <div class="text-center text-gray-500 dark:text-gray-400">
-            <div class="flex justify-center items-center mx-auto mb-4 w-10 h-10 bg-gray-100 rounded-lg dark:bg-gray-800 lg:h-16 lg:w-16">
-              <svg class="w-5 h-5 text-gray-600 lg:w-8 lg:h-8 dark:text-gray-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                <path d="M8.433 7.418c.155-.103.346-.196.567-.267v1.698a2.305 2.305 0 01-.567-.267C8.07 8.34 8 8.114 8 8c0-.114.07-.34.433-.582zM11 12.849v-1.698c.22.071.412.164.567.267.364.243.433.468.433.582 0 .114-.07.34-.433.582a2.305 2.305 0 01-.567.267z"></path>
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-13a1 1 0 10-2 0v.092a4.535 4.535 0 00-1.676.662C6.602 6.234 6 7.009 6 8c0 .99.602 1.765 1.324 2.246.48.32 1.054.545 1.676.662v1.941c-.391-.127-.68-.317-.843-.504a1 1 0 10-1.51 1.31c.562.649 1.413 1.076 2.353 1.253V15a1 1 0 102 0v-.092a4.535 4.535 0 001.676-.662C13.398 13.766 14 12.991 14 12c0-.99-.602-1.765-1.324-2.246A4.535 4.535 0 0011 9.092V7.151c.391.127.68.317.843.504a1 1 0 101.511-1.31c-.563-.649-1.413-1.076-2.354-1.253V5z" clip-rule="evenodd"></path>
-              </svg>
-            </div>
-            <h3 class="mb-2 text-xl font-bold dark:text-white">Proveedores Especializados</h3>
-            <p class="text-gray-500 dark:text-gray-400">Martilleros concursales, notarías, conservadores y tasadores</p>
-          </div>
-          <div class="text-center text-gray-500 dark:text-gray-400">
-            <div class="flex justify-center items-center mx-auto mb-4 w-10 h-10 bg-gray-100 rounded-lg dark:bg-gray-800 lg:h-16 lg:w-16">
-              <svg class="w-5 h-5 text-gray-600 lg:w-8 lg:h-8 dark:text-gray-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z" clip-rule="evenodd"></path>
-              </svg>
-            </div>
-            <h3 class="mb-2 text-xl font-bold dark:text-white">Otros Interesados</h3>
-            <p class="text-gray-500 dark:text-gray-400">Tribunales de justicia, terceros con interés legítimo y medios de comunicación</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contacto Section -->
-    <section id="contacto" class="py-20 bg-gray-50">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16">
-          <h3 class="text-3xl font-bold text-gray-900 mb-4">Contacto</h3>
-          <p class="text-xl text-gray-600">
-            Para consultas relacionadas con procesos concursales donde he sido
-            designado como liquidador
-          </p>
-        </div>
-
-        <div class="grid md:grid-cols-2 gap-12">
-          <div>
-            <h4 class="text-2xl font-semibold mb-6">Luis Aguilera Arteaga</h4>
-            <p class="text-gray-600 mb-8">
-              Liquidador Concursal registrado en SUPERIR
-            </p>
-
-            <div class="space-y-6">
-              <div class="flex items-start">
-                <svg
-                  class="w-6 h-6 text-blue-600 mr-4 mt-1"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                  ></path>
-                </svg>
-                <div>
-                  <p class="font-semibold text-gray-900">Correo Electrónico</p>
-                  <p class="text-gray-600">contacto@liquidadorconcursal.cl</p>
-                </div>
-              </div>
-
-              <div class="flex items-start">
-                <svg
-                  class="w-6 h-6 text-blue-600 mr-4 mt-1"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-                  ></path>
-                </svg>
-                <div>
-                  <p class="font-semibold text-gray-900">Teléfono</p>
-                  <p class="text-gray-600">+56 2 2840 0412</p>
-                </div>
-              </div>
-
-              <div class="flex items-start">
-                <svg
-                  class="w-6 h-6 text-blue-600 mr-4 mt-1"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M17.657 16.657L13.414 12.414a1.998 1.998 0 010-2.827l4.243-4.243a1.998 1.998 0 012.827 0l2.829 2.829a1.998 1.998 0 010 2.827l-4.243 4.243a1.998 1.998 0 01-2.827 0z"
-                  ></path>
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                </svg>
-                <div>
-                  <p class="font-semibold text-gray-900">Dirección</p>
-                  <p class="text-gray-600">
-                    Avenida Manquehue Sur 520, oficina 205<br />
-                    Las Condes, Santiago
-                  </p>
-                </div>
-              </div>
-
-              <div class="bg-blue-50 p-6 rounded-lg mt-8">
-                <h5 class="font-semibold text-blue-900 mb-3">
-                  Horarios de Atención
-                </h5>
-                <p class="text-blue-800 text-sm">
-                  Lunes a Viernes: 9:00 - 18:00<br />
-                  Para atención presencial, se recomienda coordinar cita previa
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="bg-gray-50 p-8 rounded-lg">
-            <h4 class="text-2xl font-semibold mb-6">Formulario de Contacto</h4>
-            <form class="space-y-6">
-              <div>
-                <label class="block text-sm font-medium text-gray-700 mb-2">
-                  Nombre completo *
-                </label>
-                <input
-                  type="text"
-                  required
-                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  placeholder="Ingrese su nombre completo"
-                />
-              </div>
-
-              <div>
-                <label class="block text-sm font-medium text-gray-700 mb-2">
-                  Tipo de interesado *
-                </label>
-                <select
-                  required
-                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                >
-                  <option value="">Seleccione una opción</option>
-                  <optgroup label="Deudores">
-                    <option value="empresa-liquidacion"
-                      >Empresa en liquidación</option
-                    >
-                    <option value="representante-legal"
-                      >Representante legal</option
-                    >
-                    <option value="persona-natural"
-                      >Persona natural en liquidación</option
-                    >
-                  </optgroup>
-                  <optgroup label="Acreedores">
-                    <option value="banco-institucion"
-                      >Banco o institución financiera</option
-                    >
-                    <option value="trabajador">Trabajador del deudor</option>
-                    <option value="proveedor"
-                      >Proveedor o acreedor comercial</option
-                    >
-                    <option value="acreedor-verificado"
-                      >Acreedor con crédito verificado</option
-                    >
-                  </optgroup>
-                  <optgroup label="Profesionales">
-                    <option value="abogado-deudor">Abogado del deudor</option>
-                    <option value="abogado-acreedor">Abogado de acreedor</option
-                    >
-                    <option value="estudio-juridico">Estudio jurídico</option>
-                  </optgroup>
-                  <optgroup label="Organismos y Proveedores">
-                    <option value="superir">SUPERIR</option>
-                    <option value="martillero">Martillero concursal</option>
-                    <option value="notaria">Notaría</option>
-                    <option value="conservador"
-                      >Conservador de bienes raíces</option
-                    >
-                    <option value="tasador">Tasador o perito</option>
-                  </optgroup>
-                  <optgroup label="Otros">
-                    <option value="tribunal">Tribunal de justicia</option>
-                    <option value="tercero-interes"
-                      >Tercero con interés legítimo</option
-                    >
-                    <option value="otro">Otro</option>
-                  </optgroup>
-                </select>
-              </div>
-
-              <div>
-                <label class="block text-sm font-medium text-gray-700 mb-2">
-                  Correo electrónico *
-                </label>
-                <input
-                  type="email"
-                  required
-                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  placeholder="correo@ejemplo.com"
-                />
-              </div>
-
-              <div>
-                <label class="block text-sm font-medium text-gray-700 mb-2">
-                  Teléfono
-                </label>
-                <input
-                  type="tel"
-                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  placeholder="+56 9 XXXX XXXX"
-                />
-              </div>
-
-              <div>
-                <label class="block text-sm font-medium text-gray-700 mb-2">
-                  Número de proceso o causa (si aplica)
-                </label>
-                <input
-                  type="text"
-                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  placeholder="Ej: C-XXXX-XXXX"
-                />
-              </div>
-
-              <div>
-                <label class="block text-sm font-medium text-gray-700 mb-2">
-                  Consulta o mensaje *
-                </label>
-                <textarea
-                  rows="4"
-                  required
-                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  placeholder="Describa su consulta relacionada con el proceso concursal..."
-                ></textarea>
-              </div>
-
-              <button
-                type="submit"
-                class="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition-colors font-semibold"
-              >
-                Enviar Consulta
-              </button>
-
-              <p class="text-xs text-gray-500 text-center">
-                * Campos obligatorios. La información será tratada
-                confidencialmente según la normativa vigente.
-              </p>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Flowbite Footer -->
-    <footer class="p-4 bg-white md:p-8 lg:p-10 dark:bg-gray-800">
-      <div class="mx-auto max-w-screen-xl text-center">
-        <a href="#" class="flex justify-center items-center text-2xl font-semibold text-gray-900 dark:text-white">
-          <svg class="mr-2 h-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary-600"/>
-          </svg>
-          Liquidador Concursal
-        </a>
-        <p class="my-6 text-gray-500 dark:text-gray-400">Información institucional sobre procesos concursales según la Ley N° 20.720</p>
-        <ul class="flex flex-wrap justify-center items-center mb-6 text-gray-900 dark:text-white">
-          <li><a href="#marco-legal" class="mr-4 hover:underline md:mr-6">Marco Legal</a></li>
-          <li><a href="#funciones" class="mr-4 hover:underline md:mr-6">Funciones</a></li>
-          <li><a href="#interesados" class="mr-4 hover:underline md:mr-6">Interesados</a></li>
-          <li><a href="#contacto" class="mr-4 hover:underline md:mr-6">Contacto</a></li>
-        </ul>
-        <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2025 <a href="#" class="hover:underline">Liquidador Concursal</a>. Información institucional bajo marco legal chileno.</span>
-      </div>
-    </footer>
-  </main>
+  <Footer />
 </Layout>
