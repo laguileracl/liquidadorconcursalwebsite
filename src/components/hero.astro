@@ -1,39 +1,29 @@
 ---
-import { Icon } from "astro-icon/components";
-import Link from "./ui/link.astro";
-import Container from "./container.astro";
+import { Icon } from 'astro-icon/components';
+import Link from './ui/link.astro';
+import Container from './container.astro';
 
 interface Props {
   title: string;
   subtitle?: string;
-  align?: "left" | "center";
+  align?: 'left' | 'center';
 }
 
-const { title, subtitle, align = "left" } = Astro.props;
-const alignClass = align === "center" ? "text-center" : "text-left";
+const { title, subtitle, align = 'left' } = Astro.props;
+const alignClass = align === 'center' ? 'text-center' : 'text-left';
 ---
 
 <section class="bg-blue-900 text-white py-16">
   <Container>
-    <div class={`max-w-4xl ${align === "center" ? "mx-auto" : ""}`}>
+    <div class={`max-w-4xl ${align === 'center' ? 'mx-auto' : ''}`}>
       <div class={alignClass}>
-        <h1
-          class="text-4xl lg:text-6xl xl:text-7xl font-bold lg:tracking-tight"
-        >
+        <h1 class="text-4xl lg:text-6xl xl:text-7xl font-bold lg:tracking-tight">
           {title}
         </h1>
-        {
-          subtitle && (
-            <p class="text-lg mt-4 text-blue-100 max-w-xl">{subtitle}</p>
-          )
-        }
+        {subtitle && <p class="text-lg mt-4 text-blue-100 max-w-xl">{subtitle}</p>}
       </div>
       <div class="mt-6 flex flex-col sm:flex-row gap-3">
-        <Link
-          href="#contacto"
-          size="lg"
-          class="flex gap-1 items-center justify-center"
-        >
+        <Link href="#contacto" size="lg" class="flex gap-1 items-center justify-center">
           <Icon name="tabler:message-circle" class="w-5 h-5" />
           Consultar Ahora
         </Link>

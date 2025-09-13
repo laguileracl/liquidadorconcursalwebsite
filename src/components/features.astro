@@ -1,43 +1,43 @@
 ---
-import { Icon } from "astro-icon/components";
-import Container from "./container.astro";
+import { Icon } from 'astro-icon/components';
+import Container from './container.astro';
 
 const features = [
   {
-    title: "Evaluación de Estado Financiero",
+    title: 'Evaluación de Estado Financiero',
     description:
-      "Análisis detallado de la situación patrimonial del deudor para determinar la viabilidad del convenio o la necesidad de liquidación.",
-    icon: "tabler:calculator",
+      'Análisis detallado de la situación patrimonial del deudor para determinar la viabilidad del convenio o la necesidad de liquidación.',
+    icon: 'tabler:calculator',
   },
   {
-    title: "Administración de Bienes",
+    title: 'Administración de Bienes',
     description:
-      "Administración y conservación del patrimonio del deudor durante el proceso concursal, garantizando su preservación.",
-    icon: "tabler:building-warehouse",
+      'Administración y conservación del patrimonio del deudor durante el proceso concursal, garantizando su preservación.',
+    icon: 'tabler:building-warehouse',
   },
   {
-    title: "Elaboración de Convenios",
+    title: 'Elaboración de Convenios',
     description:
-      "Propuesta y negociación de convenios judiciales que permitan la reorganización empresarial y el pago a acreedores.",
-    icon: "tabler:handshake",
+      'Propuesta y negociación de convenios judiciales que permitan la reorganización empresarial y el pago a acreedores.',
+    icon: 'tabler:user-check',
   },
   {
-    title: "Liquidación de Activos",
+    title: 'Liquidación de Activos',
     description:
-      "Realización ordenada de los bienes del deudor para maximizar el valor de recuperación para los acreedores.",
-    icon: "tabler:cash",
+      'Realización ordenada de los bienes del deudor para maximizar el valor de recuperación para los acreedores.',
+    icon: 'tabler:cash',
   },
   {
-    title: "Asesoría Legal Especializada",
+    title: 'Asesoría Legal Especializada',
     description:
-      "Acompañamiento legal integral durante todo el proceso concursal, tanto para deudores como acreedores.",
-    icon: "tabler:scale",
+      'Acompañamiento legal integral durante todo el proceso concursal, tanto para deudores como acreedores.',
+    icon: 'tabler:scale',
   },
   {
-    title: "Informes y Reportes",
+    title: 'Informes y Reportes',
     description:
-      "Elaboración de informes técnicos y reportes de gestión para mantener informados a todos los interesados del proceso.",
-    icon: "tabler:file-text",
+      'Elaboración de informes técnicos y reportes de gestión para mantener informados a todos los interesados del proceso.',
+    icon: 'tabler:file-text',
   },
 ];
 ---
@@ -48,8 +48,7 @@ const features = [
       Funciones del Liquidador Concursal
     </h2>
     <p class="text-lg mt-4 text-slate-600">
-      Servicios especializados en procesos concursales conforme a la legislación
-      chilena
+      Servicios especializados en procesos concursales conforme a la legislación chilena
     </p>
   </div>
 
@@ -62,9 +61,7 @@ const features = [
           </div>
           <div>
             <h3 class="font-semibold text-lg">{item.title}</h3>
-            <p class="text-slate-500 mt-2 leading-relaxed">
-              {item.description}
-            </p>
+            <p class="text-slate-500 mt-2 leading-relaxed">{item.description}</p>
           </div>
         </div>
       ))

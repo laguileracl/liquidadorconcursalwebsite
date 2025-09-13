@@ -1,0 +1,45 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+.npm/
+
+# Build outputs
+dist/
+.astro/
+
+# Environment files
+.env
+.env.local
+.env.production
+.env.staging
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+
+# Logs
+*.log
+logs/
+
+# Cache directories
+.cache/
+.temp/
+.tmp/
+
+# OS generated files
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage directory used by tools like istanbul
+coverage/
+*.lcov
+
+# Build files that shouldn't be formatted
+public/assets/

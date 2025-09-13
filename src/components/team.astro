@@ -1,61 +1,61 @@
 ---
-import { Icon } from "astro-icon/components";
-import Container from "./container.astro";
+import { Icon } from 'astro-icon/components';
+import Container from './container.astro';
 
 const team = [
   {
-    name: "Acreedores",
-    title: "Trabajadores, Proveedores, Bancos",
+    name: 'Acreedores',
+    title: 'Trabajadores, Proveedores, Bancos',
     avatar: {
-      src: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-      alt: "Acreedores",
+      src: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      alt: 'Acreedores',
     },
-    bio: "Personas o entidades que tienen derecho a cobrar una deuda al deudor concursado. Incluye trabajadores con remuneraciones pendientes, proveedores, instituciones financieras y cualquier persona con créditos reconocidos.",
+    bio: 'Personas o entidades que tienen derecho a cobrar una deuda al deudor concursado. Incluye trabajadores con remuneraciones pendientes, proveedores, instituciones financieras y cualquier persona con créditos reconocidos.',
   },
   {
-    name: "Deudores",
-    title: "Empresas y Personas Naturales",
+    name: 'Deudores',
+    title: 'Empresas y Personas Naturales',
     avatar: {
-      src: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-      alt: "Deudores",
+      src: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      alt: 'Deudores',
     },
-    bio: "Empresas o personas naturales que se encuentran en estado de cesación de pagos o sobreendeudamiento y requieren reorganizar sus obligaciones o liquidar su patrimonio a través del proceso concursal.",
+    bio: 'Empresas o personas naturales que se encuentran en estado de cesación de pagos o sobreendeudamiento y requieren reorganizar sus obligaciones o liquidar su patrimonio a través del proceso concursal.',
   },
   {
-    name: "Representantes Legales",
-    title: "Abogados y Asesores",
+    name: 'Representantes Legales',
+    title: 'Abogados y Asesores',
     avatar: {
-      src: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-      alt: "Representantes Legales",
+      src: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      alt: 'Representantes Legales',
     },
-    bio: "Profesionales del derecho que representan los intereses de acreedores, deudores u otros interesados en el proceso concursal, brindando asesoría especializada en derecho comercial y concursal.",
+    bio: 'Profesionales del derecho que representan los intereses de acreedores, deudores u otros interesados en el proceso concursal, brindando asesoría especializada en derecho comercial y concursal.',
   },
   {
-    name: "Superintendencia",
-    title: "Organismo Fiscalizador",
+    name: 'Superintendencia',
+    title: 'Organismo Fiscalizador',
     avatar: {
-      src: "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2689&q=80",
-      alt: "Superintendencia",
+      src: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2689&q=80',
+      alt: 'Superintendencia',
     },
-    bio: "La Superintendencia de Insolvencia y Reemprendimiento (SUPERIR) es el organismo que supervisa y fiscaliza los procesos concursales, velando por el cumplimiento de la normativa y la transparencia del proceso.",
+    bio: 'La Superintendencia de Insolvencia y Reemprendimiento (SUPERIR) es el organismo que supervisa y fiscaliza los procesos concursales, velando por el cumplimiento de la normativa y la transparencia del proceso.',
   },
   {
-    name: "Tribunales",
-    title: "Poder Judicial",
+    name: 'Tribunales',
+    title: 'Poder Judicial',
     avatar: {
-      src: "https://images.unsplash.com/photo-1556157382-97eda2d62296?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-      alt: "Tribunales",
+      src: 'https://images.unsplash.com/photo-1556157382-97eda2d62296?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      alt: 'Tribunales',
     },
-    bio: "Los juzgados civiles competentes que conocen y resuelven los procedimientos concursales, aprobar convenios, ordenar liquidaciones y resolver controversias durante el proceso.",
+    bio: 'Los juzgados civiles competentes que conocen y resuelven los procedimientos concursales, aprobar convenios, ordenar liquidaciones y resolver controversias durante el proceso.',
   },
   {
-    name: "Otros Interesados",
-    title: "Auditores, Martilleros, Peritos",
+    name: 'Otros Interesados',
+    title: 'Auditores, Martilleros, Peritos',
     avatar: {
-      src: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-      alt: "Otros Interesados",
+      src: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      alt: 'Otros Interesados',
     },
-    bio: "Profesionales especializados que participan en el proceso concursal: auditores para verificar información financiera, martilleros para realizar subastas, peritos para valorar activos y otros expertos según sea necesario.",
+    bio: 'Profesionales especializados que participan en el proceso concursal: auditores para verificar información financiera, martilleros para realizar subastas, peritos para valorar activos y otros expertos según sea necesario.',
   },
 ];
 ---
@@ -66,8 +66,7 @@ const team = [
       Interesados en el Proceso Concursal
     </h2>
     <p class="text-lg mt-4 text-slate-600">
-      Principales actores y su rol en el procedimiento de reorganización o
-      liquidación
+      Principales actores y su rol en el procedimiento de reorganización o liquidación
     </p>
   </div>
 

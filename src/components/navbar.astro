@@ -1,28 +1,28 @@
 ---
-import { Icon } from "astro-icon/components";
-import Container from "./container.astro";
-import Link from "./ui/link.astro";
+import { Icon } from 'astro-icon/components';
+import Container from './container.astro';
+import Link from './ui/link.astro';
 
 const menuitems = [
   {
-    title: "Inicio",
-    path: "#inicio",
+    title: 'Inicio',
+    path: '#inicio',
   },
   {
-    title: "Funciones",
-    path: "#funciones",
+    title: 'Funciones',
+    path: '#funciones',
   },
   {
-    title: "Interesados",
-    path: "#interesados",
+    title: 'Interesados',
+    path: '#interesados',
   },
   {
-    title: "Marco Legal",
-    path: "#legal",
+    title: 'Marco Legal',
+    path: '#legal',
   },
   {
-    title: "Contacto",
-    path: "#contacto",
+    title: 'Contacto',
+    path: '#contacto',
   },
 ];
 ---
@@ -40,9 +40,7 @@ const menuitems = [
         </button>
       </div>
     </div>
-    <nav
-      class="astronav-items astronav-toggle hidden w-full lg:w-auto mt-2 lg:flex lg:mt-0"
-    >
+    <nav class="astronav-items astronav-toggle hidden w-full lg:w-auto mt-2 lg:flex lg:mt-0">
       <ul class="flex flex-col lg:flex-row lg:gap-3">
         {
           menuitems.map((item, index) => (
@@ -71,32 +69,32 @@ const menuitems = [
 
 <script>
   // Mobile menu toggle
-  document.addEventListener("DOMContentLoaded", function () {
-    const menuButton = document.getElementById("astronav-menu");
-    const menuItems = document.querySelector(".astronav-items");
+  document.addEventListener('DOMContentLoaded', function () {
+    const menuButton = document.getElementById('astronav-menu');
+    const menuItems = document.querySelector('.astronav-items');
 
     if (menuButton && menuItems) {
-      menuButton.addEventListener("click", function () {
-        menuItems.classList.toggle("hidden");
+      menuButton.addEventListener('click', function () {
+        menuItems.classList.toggle('hidden');
       });
     }
   });
 
   // Smooth scrolling for anchor links
-  document.addEventListener("DOMContentLoaded", function () {
+  document.addEventListener('DOMContentLoaded', function () {
     const links = document.querySelectorAll('a[href^="#"]');
 
     links.forEach((link) => {
-      link.addEventListener("click", function (e) {
+      link.addEventListener('click', function (e) {
         e.preventDefault();
 
-        const targetId = this.getAttribute("href");
+        const targetId = this.getAttribute('href');
         const targetElement = document.querySelector(targetId);
 
         if (targetElement) {
           targetElement.scrollIntoView({
-            behavior: "smooth",
-            block: "start",
+            behavior: 'smooth',
+            block: 'start',
           });
         }
       });

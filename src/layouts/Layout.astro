@@ -1,8 +1,8 @@
 ---
-import { SEO } from "astro-seo";
-import "@fontsource-variable/inter/index.css";
-import "@fontsource-variable/bricolage-grotesque/index.css";
-import "../styles/global.css";
+import { SEO } from 'astro-seo';
+import '@fontsource-variable/inter/index.css';
+import '@fontsource-variable/bricolage-grotesque/index.css';
+import '../styles/global.css';
 
 export interface Props {
   title: string;
@@ -11,11 +11,11 @@ export interface Props {
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
 
-const resolvedImageWithDomain = new URL("/favicon.svg", Astro.site).toString();
+const resolvedImageWithDomain = new URL('/favicon.svg', Astro.site).toString();
 
 const {
   title,
-  description = "Servicios profesionales especializados en procesos concursales conforme a la legislación chilena. Liquidador concursal con más de 20 años de experiencia.",
+  description = 'Servicios profesionales especializados en procesos concursales conforme a la legislación chilena. Liquidador concursal con más de 20 años de experiencia.',
 } = Astro.props;
 ---
 
@@ -32,27 +32,27 @@ const {
       description={description}
       canonical={canonicalURL}
       twitter={{
-        creator: "@liquidadorconcursal",
-        site: "@liquidadorconcursal",
-        card: "summary_large_image",
+        creator: '@liquidadorconcursal',
+        site: '@liquidadorconcursal',
+        card: 'summary_large_image',
       }}
       openGraph={{
         basic: {
           title: title,
-          type: "website",
+          type: 'website',
           image: resolvedImageWithDomain,
           url: canonicalURL,
         },
         optional: {
           description: description,
-          siteName: "Liquidador Concursal",
+          siteName: 'Liquidador Concursal',
         },
         image: {
           url: resolvedImageWithDomain,
           width: 1200,
           height: 630,
-          alt: "Liquidador Concursal - Servicios Profesionales",
-          type: "image/svg+xml",
+          alt: 'Liquidador Concursal - Servicios Profesionales',
+          type: 'image/svg+xml',
         },
       }}
     />

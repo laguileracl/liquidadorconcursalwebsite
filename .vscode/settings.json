@@ -1,0 +1,83 @@
+{
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.organizeImports": "explicit"
+  },
+
+  // Astro specific settings
+  "[astro]": {
+    "editor.defaultFormatter": "astro-build.astro-vscode"
+  },
+
+  // TypeScript settings
+  "typescript.preferences.importModuleSpecifier": "relative",
+  "typescript.suggest.autoImports": true,
+
+  // ESLint settings
+  "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact", "astro"],
+
+  // File associations
+  "files.associations": {
+    "*.astro": "astro"
+  },
+
+  // Emmet settings
+  "emmet.includeLanguages": {
+    "astro": "html"
+  },
+
+  // Auto save
+  "files.autoSave": "onFocusChange",
+
+  // Trim whitespace
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+
+  // Word wrap
+  "editor.wordWrap": "on",
+  "editor.rulers": [80, 120],
+
+  // Tab settings
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+
+  // Search settings
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/dist": true,
+    "**/.astro": true,
+    "**/coverage": true
+  },
+
+  // File explorer settings
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true,
+    "**/node_modules": true,
+    "**/.astro": true
+  },
+
+  // Testing settings
+  "vitest.enable": true,
+  "vitest.commandLine": "npm run test",
+
+  // Spell checker settings
+  "cSpell.words": [
+    "astro",
+    "astroship",
+    "liquidador",
+    "concursal",
+    "Aguilera",
+    "Arteaga",
+    "SUPERIR",
+    "tabler",
+    "vitest"
+  ]
+}

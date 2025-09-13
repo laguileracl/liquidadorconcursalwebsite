@@ -1,17 +1,33 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 html {
-  font-family: "Inter Variable", "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  font-family:
+    'Inter Variable',
+    'Inter',
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    sans-serif;
   scroll-behavior: smooth;
 }
 
 body {
-  font-family: "Inter Variable", "Inter", system-ui, sans-serif;
+  font-family: 'Inter Variable', 'Inter', system-ui, sans-serif;
 }
 
 /* Headings use Bricolage Grotesque */
-h1, h2, h3, h4, h5, h6 {
-  font-family: "Bricolage Grotesque Variable", "Bricolage Grotesque", Georgia, serif;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Bricolage Grotesque Variable', 'Bricolage Grotesque', Georgia, serif;
 }
 
 /* Remove default margins and add custom spacing */
@@ -28,7 +44,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Smooth transitions for interactive elements */
-a, button {
+a,
+button {
   transition: all 0.2s ease-in-out;
 }
 
@@ -68,5 +85,5 @@ a, button {
 
 /* Prevent flash of unstyled content */
 .font-inter {
-  font-family: "Inter Variable", "Inter", system-ui, sans-serif;
+  font-family: 'Inter Variable', 'Inter', system-ui, sans-serif;
 }
