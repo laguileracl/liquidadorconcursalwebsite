@@ -71,7 +71,6 @@
   // Spell checker settings
   "cSpell.words": [
     "astro",
-    "astroship",
     "liquidador",
     "concursal",
     "luis",
@@ -80,5 +79,11 @@
     "SUPERIR",
     "tabler",
     "vitest"
-  ]
+  ],
+
+  // Terminal settings
+  "terminal.integrated.defaultProfile.osx": "bash",
+  "terminal.integrated.profiles.osx": {
+    "bash": { "path": "/bin/bash" }
+  }
 }

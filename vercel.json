@@ -9,5 +9,11 @@
         "distDir": "dist"
       }
     }
+  ],
+  "redirects": [
+    { "source": "/index-astroship", "destination": "/", "permanent": true },
+    { "source": "/index-astroship/(.*)", "destination": "/", "permanent": true },
+    { "source": "/index-flowbite-backup", "destination": "/", "permanent": true },
+    { "source": "/index-flowbite-backup/(.*)", "destination": "/", "permanent": true }
   ]
 }

@@ -1,43 +1,65 @@
-# Astro Starter Kit: Minimal
+# Liquidador Concursal Website
 
-```sh
-npm create astro@latest -- --template minimal
+Sitio estático construido con Astro, Tailwind CSS y Vite. Incluye integración SEO, pruebas con Vitest, ESLint + Prettier y pipeline de CI.
+
+## Estructura
+
+```
+src/
+	components/      # Componentes Astro y UI
+	layouts/         # Layout base con SEO integrado
+	pages/           # Páginas del sitio
+	styles/          # Estilos globales
+public/            # Assets estáticos (favicon, robots)
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Scripts
 
-## 🚀 Project Structure
+- `npm run dev`: Inicia servidor de desarrollo en http://localhost:4321
+- `npm run build`: Compila a producción en `dist/`
+- `npm run preview`: Previsualiza el build localmente
+- `npm run lint`: Ejecuta ESLint
+- `npm run lint:fix`: Corrige lint
+- `npm run format`: Formatea con Prettier
+- `npm run format:check`: Verifica formato
+- `npm run type-check`: `astro check` + `tsc --noEmit`
+- `npm run test`: Ejecuta Vitest (watch)
+- `npm run test:run`: Ejecuta Vitest una sola vez
+- `npm run test:coverage`: Cobertura de pruebas
+- `npm run ci`: Lint + format:check + type-check + test:run
 
-Inside of your Astro project, you'll see the following folders and files:
+## Desarrollo
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+1. Instalar dependencias
+2. Correr el entorno de desarrollo
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Calidad
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+El proyecto incluye:
 
-Any static assets, like images, can be placed in the `public/` directory.
+- ESLint (flat config) con soporte Astro/TS
+- Prettier + plugin Astro
+- TypeScript estricto
+- Vitest con `happy-dom`
+- Informe de cobertura (`coverage/`)
 
-## 🧞 Commands
+## SEO
 
-All commands are run from the root of the project, from a terminal:
+`src/layouts/Layout.astro` usa `astro-seo` para generar metadatos (Open Graph y Twitter). Ajusta `title`, `description` y favicon según necesites.
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+## CI/CD
 
-## 👀 Want to learn more?
+Se incluye GitHub Actions (`.github/workflows/ci.yml`) que ejecuta:
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- instalación (`npm ci`)
+- lint, format:check, type-check, tests
+- build y subida del artefacto `dist`
+
+## Deploy
+
+Listo para Vercel con configuración de static build en `vercel.json`. La salida de build está en `dist/`.
+
+## Notas
+
+- La sección de contacto muestra datos directos (email/teléfono/dirección). No se utiliza formulario por ahora.
+- El proyecto usa Tailwind v4 vía `@tailwindcss/vite` y utilidades en `global.css`.

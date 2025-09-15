@@ -53,6 +53,14 @@ export default [
 
   // Ignores
   {
-    ignores: ['dist/', 'node_modules/', '.astro/', '*.config.js', '*.config.mjs', '*.config.ts'],
+    ignores: [
+      'dist/',
+      'node_modules/',
+      '.astro/',
+      'coverage/',
+      '*.config.js',
+      '*.config.mjs',
+      '*.config.ts',
+    ],
   },
 ];
